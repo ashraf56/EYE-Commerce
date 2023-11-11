@@ -10,7 +10,7 @@ const totalquantity= cart.length
         <div className='container mx-auto'>
           <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-xl">EYE-COMMERCE</a>
   </div>
   <div className="flex-none list-none">
   
