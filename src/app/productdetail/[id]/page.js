@@ -12,20 +12,17 @@ const singleProduct= await getSingleProduct(id)
 
     return (
         <div className='p-10'>
-            <div className='text-center'>
-                <button className='btn'>
-                    <Link href={'/'}>Go to Home</Link>
-                </button>
-            </div>
-            <div className="card card-side bg-base-100 shadow-xl">
-  <figure>
-    <Image src={singleProduct?.thumbnail} alt='img' width={300} height={300}/>
+        
+            <div className="card bg-base-100 ">
+   <div className="card-body">
+    <figure>
+    <Image src={singleProduct?.thumbnail} alt='img' width={400} height={400}/>
   </figure>
-  <div className="card-body">
+ 
    <div>
-   <h2 className="card-title">{singleProduct.title}</h2>
+   <h2 className="card-title text-3xl">{singleProduct.title}</h2>
     <p>${singleProduct.price}</p>
-    <p>{singleProduct.description}</p>
+    <p><span className='font-bold'>Description:</span>{singleProduct.description}</p>
    <Stockcount singleProduct={singleProduct}></Stockcount>
    </div>
     <div className="card-actions justify-end">

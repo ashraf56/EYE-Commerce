@@ -5,12 +5,12 @@ import React from 'react';
 const Allproduct = async() => {
 const {products}  = await getAllProduct();
 
-const redirectToProductDetail = (productId) => {
-  
-  
-};
+
     return (
-        <div className='items-center'>
+        <div className='items-center py-10'>
+<div>
+            <h1 className='font-bold text-3xl px-10 py-5 uppercase'>All Product </h1>
+          </div>
          <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-2  px-10 '>
             
              {

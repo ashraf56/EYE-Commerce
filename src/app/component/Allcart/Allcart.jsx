@@ -1,5 +1,6 @@
 'use client'
 import { Context } from '@/context/Context';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -23,11 +24,15 @@ toast.success("Purchased")
     
     return (
         <div>
-           <div className='grid grid-cols-1   gap-2  px-20 '>
+         { cart.length != 0 ?  <div className='grid grid-cols-1   gap-3  px-20 '>
             {
                cart?.map(p =>(
                 <div className="alert shadow-lg justify-between" key={p.id}>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+  <div className="avatar">
+  <div className="w-24 rounded-full">
+    <Image src={p?.thumbnail} alt='e' width={50} height={50} />
+  </div>
+</div>
 
   <div>
     <h3 className="font-bold">{p?.title}</h3>
@@ -48,7 +53,7 @@ toast.success("Purchased")
                   
                ))
            }
-           </div>  <Toaster></Toaster>
+           </div> : <div><div className='text-center hero-content text-4xl uppercase justify-center items-center' >No Cart item </div> </div> } <Toaster></Toaster>
         </div>
     );
 };
