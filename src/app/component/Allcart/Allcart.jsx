@@ -27,9 +27,9 @@ toast.success("Purchased")
          { cart.length != 0 ?  <div className='grid grid-cols-1   gap-3  px-20 '>
             {
                cart?.map(p =>(
-                <div className="alert shadow-lg justify-between" key={p.id}>
+                <div className="alert  shadow-lg " key={p.id}>
   <div className="avatar">
-  <div className="w-24 rounded-full">
+  <div className="rounded-full">
     <Image src={p?.thumbnail} alt='e' width={50} height={50} />
   </div>
 </div>
@@ -39,7 +39,7 @@ toast.success("Purchased")
     <p>${p?.price}</p>
     <p>Quantity: {p?.quantity}</p>
   </div>
-  <div>
+  <div className=' '>
      <button className="btn" onClick={()=>payment(p)}>
       Buy now 
      </button>

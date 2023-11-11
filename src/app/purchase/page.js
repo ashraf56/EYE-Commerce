@@ -13,7 +13,7 @@ const Purchase = () => {
           {
               Pcart?.map(p =>(
               
-                    <div className="card max-w-md bg-warning text-warning-content" key={p?.id}>
+                    <div className="card max-w-full md:max-w-md bg-warning text-warning-content" key={p?.id}>
 <div className="card-body">
   <h2 className="card-title">{p?.title}</h2>
   <p>${p?.price}</p>
