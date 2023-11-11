@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 
 const Stockcount = ({singleProduct}) => {
     let {Pcart}=useContext(Context)
+    
     const getProductStock = () => {
         const cartItem = Pcart.find((item) => item.id ===  singleProduct.id);
         return cartItem ? ( <div>

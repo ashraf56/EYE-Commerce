@@ -2,7 +2,6 @@ import CartButton from '@/app/component/CartButton/CartButton';
 import Stockcount from '@/app/component/Stockcount/Stockcount';
 import getSingleProduct from '@/util/getSingleProduct';
 import Image from 'next/image';
-import Link from 'next/link';
 
 
 
@@ -23,9 +22,11 @@ const singleProduct= await getSingleProduct(id)
    <h2 className="card-title text-3xl">{singleProduct.title}</h2>
     <p>${singleProduct.price}</p>
     <p><span className='font-bold'>Description:</span>{singleProduct.description}</p>
+    {/* it will show stock number */}
    <Stockcount singleProduct={singleProduct}></Stockcount>
    </div>
     <div className="card-actions justify-end">
+      {/*  add to cart button */}
       <CartButton singleProduct={singleProduct}></CartButton>
     </div>
   </div>

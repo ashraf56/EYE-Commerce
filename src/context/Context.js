@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext,  useEffect, useState } from "react"
 import toast from "react-hot-toast"
 
 export const  Context= createContext(null)
@@ -8,7 +8,7 @@ export const GlobalState = ({children})=>{
 const [cart,setCart]=useState([])
 const [Pcart,setPCart]=useState([])
 
-
+// this function is for removing cart item from localstorage  
 const removeCartItem = (itemId) => {
   const updatedCart = cart.filter((item) => item.id !== itemId);
   localStorage.setItem("cartdata", JSON.stringify(updatedCart));
@@ -16,6 +16,7 @@ const removeCartItem = (itemId) => {
   
 };
 
+// This function is for add to cart
 const handlecartItem = (getItem)=>{
  let maincart = [...cart]
 let cartindex= maincart.findIndex(product=> product.id=== getItem.id)
@@ -33,6 +34,9 @@ localStorage.setItem("cartdata",JSON.stringify(maincart))
 
 
 }
+
+
+// This function created for payment 
 const handlePurchaseItem = (getItem)=>{
   let maincart1 = [...Pcart]
 
