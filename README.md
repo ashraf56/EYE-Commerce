@@ -21,6 +21,7 @@ At EYE-Commerce, we're not just offering products; we're delivering a seamless, 
 - Next js
 - Localstorage
 - Daisy UI
+- REST API = https://dummyjson.com
 
 # Demo
 - https://eye-commerce.vercel.app/ 
