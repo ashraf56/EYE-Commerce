@@ -37,25 +37,32 @@ localStorage.setItem("cartdata",JSON.stringify(maincart))
 
 
 // This function created for payment 
-const handlePurchaseItem = (getItem)=>{
-  let maincart1 = [...Pcart]
+const handlePurchaseItem = (getPerchaseItem)=>{
+  let perchaseaCart = [...Pcart]
 
-   let cindex= maincart1.findIndex(p=> p.id === getItem.id)
+   let cindex= perchaseaCart.findIndex(p=> p.id === getPerchaseItem.id)
    if (cindex === -1) {
-      maincart1.push({...getItem})
-  } 
-  const updatedMainCart = maincart1.map((item) => {
-    if (item.id === getItem.id && item.stock >item.quantity) {
+      perchaseaCart.push({...getPerchaseItem})
+  } else{
+    
+      perchaseaCart[cindex].quantity= perchaseaCart[cindex].quantity + getPerchaseItem.quantity;
+      
+      
+    }
+  const updatedMainCart = perchaseaCart.map((item) => {
+    if (item.id === getPerchaseItem.id && item.stock >item.quantity) {
       return {
         ...item,
-        stock: item.stock - item.quantity,
+        stock: item.stock - getPerchaseItem.quantity,
       };
+     
     }
     return item;
+   
   });
  setPCart(updatedMainCart)
  localStorage.setItem("purchasedata",JSON.stringify(updatedMainCart))
- removeCartItem(getItem.id)
+ removeCartItem(getPerchaseItem.id)
  }
 
 
