@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='flex flex-col  justify-center'>
       <Banner></Banner>
-    <Allproduct></Allproduct>
+      <Allproduct></Allproduct>
     </div>
   )
 }

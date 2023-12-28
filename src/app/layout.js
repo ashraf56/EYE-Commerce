@@ -16,11 +16,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <GlobalState>
           <div>  <Navber></Navber>
-       <main> {children}</main>
-        </div>
+            <main> {children}</main>
+          </div>
         </GlobalState>
-      
-        </body>
+
+      </body>
     </html>
   )
 }
